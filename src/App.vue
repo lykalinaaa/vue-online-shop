@@ -11,11 +11,13 @@
     try {
       const { data } = await  axios.get('/data/items.json')
       items.value = data
+      
     } catch (err) {
       console.log(err)
     }
   
-  })  
+  });  
+
 </script>
 
 <template>

@@ -10,8 +10,8 @@
     <div class="choice"> 
       <p>Материал:</p>    
       <select>
-        <option value="0">Металл</option>
         <option value="1">Дерево</option>
+        <option value="2">Металл</option>
       </select>
     </div>
   </div>

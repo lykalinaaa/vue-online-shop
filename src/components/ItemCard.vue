@@ -3,18 +3,16 @@
     id: String,
     name: String,
     code: String,
-    priceNew: String,
-    priceOld: String,
+    priceNew: Number,
+    priceOld: Number,
     imageItem: String,
     material: Number,
 
     isInCart: Boolean,
     isInFavourites: Boolean,
-
-    onClickInCart: Function,
-    onClickInFavourite: Function
   })
 
+  
   
 </script>
 
@@ -28,11 +26,9 @@
     </div>
 
     <div class="info">
-      <div>
-        <p class="code">{{ code }}</p>
-        <p class="name_of_item">{{ name }}</p>
-        <div class="price"><span class="old">{{ priceOld ? priceOld+'₽' : null}}</span><span class="new">{{ priceNew }}₽</span></div>
-      </div>
+      <p class="code">{{ code ? code : "Нет кода"}}</p>
+      <p class="name_of_item">{{ name }}</p>
+      <div><span class="old" v-if="priceOld !== null">{{ priceOld }}₽</span><span class="new">{{ priceNew }}₽</span></div>
       <div class="card_icons">
         <img @click="onClickInCart" :src="isInCart ? '/icons/added.png' : '/icons/cart.png'" alt="">
         <img @click="onClickInFavourite" :src="isInFavourites ? '/icons/heart_pink.png' : '/icons/heart_black.png'" alt="">
@@ -54,9 +50,11 @@
   .image {
     width: 100%;
     text-align: center;
+    position: relative;
   }
 
   .sale {
+    position: absolute;
     width: 81px;
     height: 24px;
     background-color: #EB5757;
@@ -83,6 +81,11 @@
     width: 50%;
     font-family: 'SF UI Text', sans-serif;
     display: inline-block;
+  }
+
+  .info p {
+    font-family: 'SF UI Text', sans-serif;
+
   }
 
   .code {
@@ -114,10 +117,5 @@
   .card_icons img {
     margin-left: 25px;
   }
-
-  
-
-
-  
   
 </style>

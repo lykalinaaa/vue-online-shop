@@ -5,13 +5,6 @@
     items: Array
   })
 
-  const onClickInCart = () => {
-    alert('545654')
-  }
-
-  const onClickInFavourite = () => {
-    alert('1111')
-  }
 </script>
 
 <template>
@@ -25,8 +18,6 @@
          :priceOld="item.price.old_price"
          :imageItem="item.image.url"
          :material="item.material"
-         :onClickInCart="onClickInCart"
-         :onClickInFavourite="onClickInFavourite"
       />
   </div>
 </template>
@@ -36,8 +27,9 @@
     width: 100%;
     margin-top: 46px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 48px;
+    gap: 66px;
   }
 
 </style>
