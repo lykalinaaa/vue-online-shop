@@ -1,5 +1,4 @@
 <script setup>
-  import Menu from './components/Menu.vue'
   import Header from './components/Header.vue'
   import Filter from './components/Filter.vue'
   
@@ -7,7 +6,6 @@
 
 <template>
   <div class="wrapper">
-    <Menu />
     <Header />
     <Filter />
   </div>
