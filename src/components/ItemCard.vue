@@ -1,4 +1,14 @@
+<script setup>
+  defineProps({
+    id: String,
+    name: String,
+    code: String,
+    price: Array,
+    image: String,
+    material: Number
+  })
+</script>
+
 <template>
-  <h1>Hello</h1>
-  <h2>Начало работы</h2>
+  
 </template>

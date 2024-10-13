@@ -1,11 +1,23 @@
 <script setup>
-import ItemCard from './components/ItemCard.vue'
+  import Menu from './components/Menu.vue'
+  import Header from './components/Header.vue'
+  import Filter from './components/Filter.vue'
+  
 </script>
 
 <template>
-  <ItemCard />
+  <div class="wrapper">
+    <Menu />
+    <Header />
+    <Filter />
+  </div>
 </template>
 
 <style scoped>
+
+.wrapper {
+  max-width: 1488px;
+  margin: auto;
+}
 
 </style>
