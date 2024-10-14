@@ -1,18 +1,32 @@
+<script setup>
+  defineProps({
+    materials: Array,
+    materialList: {
+      type: String,
+      default: '0',
+    },
+  })
+
+</script>
+
 <template>
   <div class="filter">
     <div class="choice">
       <p>Сортировать по:</p>
       <select>
-        <option value="0" class="item">Цена по возрастанию</option>
-        <option value="1" class="item">Цена по убыванию</option>
+        <option value="0" selected>Без сортировки</option>
+        <option value="1">По возрастанию</option>
+        <option value="2">По убыванию</option>
       </select>
     </div>
     <div class="choice"> 
-      <p>Материал:</p>    
-      <select>
-        <option value="1">Дерево</option>
-        <option value="2">Металл</option>
-      </select>
+      <p>Материал:</p>
+      <select 
+      :value="materialList"
+      @input="$emit('update:modelValue', $event.target.value)">
+        <option value="0">Все материалы</option>
+        <option v-for="material in materials" :key="material.id" :value="material.id">{{ material.name }}</option>
+      </select>    
     </div>
   </div>
 </template>
